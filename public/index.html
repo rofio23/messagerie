@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lumen — Messagerie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="auth" hidden>
+    <div class="auth-card">
+      <h1>Lumen</h1>
+      <p class="muted">Tes conversations, sur tous tes appareils.</p>
+      <div class="tabs" role="tablist">
+        <button id="tab-login" class="on" type="button">Connexion</button>
+        <button id="tab-register" type="button">Créer un compte</button>
+      </div>
+      <div class="auth-form">
+        <input id="a-name" placeholder="Nom affiché" autocomplete="name" hidden>
+        <input id="a-email" type="email" placeholder="Adresse e-mail" autocomplete="email">
+        <input id="a-pass" type="password" placeholder="Mot de passe (8 caractères min.)" autocomplete="current-password">
+        <p id="a-error" class="error" role="alert"></p>
+        <button id="a-submit" class="primary" type="button">Se connecter</button>
+      </div>
+    </div>
+  </section>
+
+  <main id="app" hidden>
+    <aside id="side">
+      <header class="me">
+        <div class="avatar" id="me-avatar"></div>
+        <div class="who"><strong id="me-name"></strong><span id="me-email" class="muted"></span></div>
+        <button id="btn-profile" class="ghost" title="Modifier mon nom" type="button">Modifier</button>
+        <button id="btn-logout" class="ghost" title="Se déconnecter" type="button">Quitter</button>
+      </header>
+      <input id="search" placeholder="Chercher une personne par nom ou e-mail">
+      <ul id="list"></ul>
+    </aside>
+
+    <section id="chat">
+      <header class="chat-head">
+        <button id="btn-back" class="ghost" type="button">Retour</button>
+        <strong id="peer-name"></strong>
+      </header>
+      <div id="msgs"></div>
+      <div id="empty" class="muted">Choisis une conversation ou cherche quelqu’un pour écrire le premier message.</div>
+      <form id="composer" hidden>
+        <input id="text" placeholder="Écrire un message" autocomplete="off" maxlength="4000">
+        <button class="primary" type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
+
